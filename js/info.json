@@ -1,42 +1,30 @@
 [
     {
-        "name":"Avaram",
+        "name":"akiec",
         "description":"description1"
     },
     {
-        "name":"Bellyache bush (Green)",
+        "name":"bcc",
         "description":"description2"
     },
     {
-        "name":"Big Caltrops",
+        "name":"bkl",
         "description":"description3"
     },
     {
-        "name":"Crown flower",
+        "name":"df",
         "description":"description4"
     },
     {
-        "name":"heart-leaved moonseed",
+        "name":"mel",
         "description":"description5"
     },
     {
-        "name":"Indian Stinging Nettle",
+        "name":"nv",
         "description":"description6"
     },
     {
-        "name":"Indian Thornapple",
+        "name":"vasc",
         "description":"description7"
-    },
-    {
-        "name":"Ivy Gourd",
-        "description":"description8"
-    },
-    {
-        "name":"Madras Pea Pumpkin",
-        "description":"description9"
-    },
-    {
-        "name":"Mexican Prickly Poppy",
-        "description":"description10"
     }
 ]
