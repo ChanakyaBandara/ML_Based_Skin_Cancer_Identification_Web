@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Skin Cancer Recognition</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--google font montserrat-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat: 400,500,800" rel="stylesheet">
+	<!--Google font over-->
+</head>
+
+<body>
+	<header>
+	</header>
+	<div class="container-fluid" style="background-image:linear-gradient(to right,#ffffff); height: 1000px; ">
+		<div class="container"
+			style="background-color: #c7ecee; border-radius: 10px; padding-top: 1%; padding-bottom: 1%; min-height: fit-content; opacity: 1;">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1
+						style="font-family: Montserrat; font-weight: 900; text-align: center; padding-bottom: 2%; color: #130f40;">
+						ML Based Skin Cancer Recognition</h1>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-sm-12">
+					<p
+						style="font-family: Montserrat; font-weight: 600; text-align: left; font-size: 25px; color: #130f40;">
+						<span id="cancerName"></span>
+					</p>
+					<p><span id="cancerAccuracy"></span></p>
+					<p><span id="cancerDescription"></span></p>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="padding-top: 1%; padding-bottom: 1%;">
+			<form id="fileForm" enctype="multipart/form-data">
+				<div class="row" style="margin-bottom: 2%;">
+					<div class="col-sm-12">
+						<label class="form-label" for="File"
+							style="font-family: Montserrat; font-weight: 600; text-align: left; font-size: 25px; color: #130f40;">Upload
+							your image here</label>
+						<input type="file" class="form-control" id="File" name="File" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-primary" style=" 
+										background:#4834d4; 
+										border-color: transparent;
+										font-family: Montserrat;
+										font-weight: 400;
+										padding: 10px 20px 10px 20px;
+										border-radius: 10px;
+										">
+							Search
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="container" style="padding-bottom: 1%;">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="col-sm-6">
+						<table class="table" id="resultTbl"></table>
+					</div>
+					<div class="col-sm-6">
+						<img id="imageview" style="
+							width: 300px;
+							height: 300px;
+							max-width: 100%;
+							max-height: 100%;
+							border-radius: 20px;
+							border: 5px solid #555;
+							display: block;
+							margin: auto;
+							margin-top: 10%;
+						" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="LoadingSpinner/loading-spinner.js"></script>
+	<script language="javascript" src="js/main.js"></script>
+	<script language="javascript">
+		const image = document.getElementById("File");
+		const imageview = document.getElementById("imageview");
+
+		image.onchange = (e) => {
+			console.log("Image changed");
+			var file = image.files[0];
+			reader = new FileReader();
+			reader.onload = function () {
+				imageview.src = reader.result;
+			};
+			reader.readAsDataURL(file);
+		};
+	</script>
+</body>
+
+</html>

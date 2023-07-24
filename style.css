@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header
+{
+    height: 100vh;
+}
+.navbar-style
+{
+    box-shadow: 0 5px 10px #dcc6e0;
+}
+.logo
+{
+    width: 180px;
+    padding: 5px;
+}
+.icon-bar
+{
+    background: #663399;
+}
+.li a
+{
+    color: #663399;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+      font-family: 'Montserrat', sans-serif;
+  }
+  p {
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+  }
