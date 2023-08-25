@@ -31,6 +31,7 @@ function processData(result) {
     var selectedIndex;
     var selectedAccuracy = 0;
     var finalResult = [];
+    console.logjsonData(jsonData)
     result.forEach((accuracy, index) => {
         if (accuracy > 0.7 && accuracy > selectedAccuracy) {
             selectedIndex = index;
