@@ -25,9 +25,9 @@
 
   function detection($var1)
   {
-    $command1 =  'python main.py ' . $var1;
-    $command = escapeshellcmd($command1);
-    $output = shell_exec($command);
+    $command =  'E:\Projects\skin_cancer_identification\venv\Scripts\python.exe C:/xampp/htdocs/ML_Based_Skin_Cancer_Identification_Web/PHP/main.py ' . $var1;
+    $commandResult = escapeshellcmd($command);
+    $output = shell_exec($commandResult);
     return $output;
   }
   ?>

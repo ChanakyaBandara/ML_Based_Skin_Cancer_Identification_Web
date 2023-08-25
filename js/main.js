@@ -31,7 +31,7 @@ function processData(result) {
     var selectedIndex;
     var selectedAccuracy = 0;
     var finalResult = [];
-    console.logjsonData(jsonData)
+    console.log(jsonData)
     result.forEach((accuracy, index) => {
         if (accuracy > 0.7 && accuracy > selectedAccuracy) {
             selectedIndex = index;
@@ -40,7 +40,7 @@ function processData(result) {
         finalResult.push({ index, accuracy, name: jsonData[index].name, description: jsonData[index].description })
     });
     document.getElementById('cancerName').innerHTML = finalResult[selectedIndex].name
-    document.getElementById('cancerAccuracy').innerHTML = "Accuracy : " + finalResult[selectedIndex].accuracy*100 + " %"
+    document.getElementById('cancerAccuracy').innerHTML = "Accuracy : " + (finalResult[selectedIndex].accuracy*100).toFixed(2) + " %"
     document.getElementById('cancerDescription').innerHTML = "Description : " + finalResult[selectedIndex].description
     return finalResult;
 }

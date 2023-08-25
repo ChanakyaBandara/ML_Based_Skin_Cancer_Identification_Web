@@ -8,13 +8,13 @@ import json,codecs
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = tensorflow.keras.models.load_model('SkinCancer_CNN.h5')
+model = tensorflow.keras.models.load_model('C:/xampp/htdocs/ML_Based_Skin_Cancer_Identification_Web/PHP/SkinCancer_CNN.h5')
 
 def detection(filename):
-    print(filename)
+    # print(filename)
     image_size = 32
 
-    img = cv2.imread("uploads/"+filename)
+    img = cv2.imread("C:/xampp/htdocs/ML_Based_Skin_Cancer_Identification_Web/PHP/uploads/"+filename)
 
     if img is None:
         print(f"Error loading image: {filename}")
