@@ -32,15 +32,15 @@ function processData(result) {
     var selectedAccuracy = 0;
     var finalResult = [];
     console.log(jsonData)
-    result.forEach((accuracy, index) => {
+    result[0][0].forEach((accuracy, index) => {
         if (accuracy > 0.7 && accuracy > selectedAccuracy) {
             selectedIndex = index;
             selectedAccuracy = accuracy;
         }
-        finalResult.push({ index, accuracy, name: jsonData[index].name, description: jsonData[index].description })
+        finalResult.push({ index, cnn: accuracy, vgg16: result[1][0][index], resNet50: result[2][0][index], name: jsonData[index].name, description: jsonData[index].description })
     });
     document.getElementById('cancerName').innerHTML = finalResult[selectedIndex].name
-    document.getElementById('cancerAccuracy').innerHTML = "Accuracy : " + (finalResult[selectedIndex].accuracy*100).toFixed(2) + " %"
+    document.getElementById('cancerAccuracy').innerHTML = "Accuracy : " + (finalResult[selectedIndex].cnn*100).toFixed(2) + " %"
     document.getElementById('cancerDescription').innerHTML = "Description : " + finalResult[selectedIndex].description
     return finalResult;
 }
@@ -48,7 +48,7 @@ function processData(result) {
 function populateTable(data){
     $("#resultTbl").empty();
     $("#resultTbl").append(
-      "<thead><th>Index</th><th>Name</th><th>Accuracy</th></thead><tbody>"
+      "<thead><th>Index</th><th>Name</th><th>CNN Accuracy</th><th>VGG16 Accuracy</th><th>ResNet50 Accuracy</th></thead><tbody>"
     );
     data.forEach(row => {
         $("#resultTbl").append(
@@ -57,7 +57,11 @@ function populateTable(data){
               "</td><td>" +
               row.name +
               "</td><td>" +
-              row.accuracy +
+              row.cnn +
+              "</td><td>" +
+              row.vgg16 +
+              "</td><td>" +
+              row.resNet50 +
               "</td></tr>"
           );
     });

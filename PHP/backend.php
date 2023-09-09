@@ -18,7 +18,7 @@
       $resultObj = json_decode(file_get_contents("result.json"));
       $myObj=new stdClass;
       $myObj->shelloutput = $shelloutput;
-      $myObj->result = $resultObj[0];
+      $myObj->result = $resultObj;
       echo json_encode($myObj);
     }
   }
